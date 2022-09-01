@@ -40,4 +40,12 @@ public class SakilaAppApplication {
 		return actorRepository.findById(id);
 	}
 
+	@PutMapping("/changeId/{id}")
+	@ResponseBody
+	public void updateActor(@PathVariable int id, @RequestParam String name)
+	{
+
+	}
+
+
 }

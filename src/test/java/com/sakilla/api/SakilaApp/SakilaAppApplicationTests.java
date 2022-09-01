@@ -12,4 +12,9 @@ class SakilaAppApplicationTests {
 	{
 	}
 */
+    @Test
+    public void testActor(){
+        Actor a = new Actor();
+    }
+
 }
