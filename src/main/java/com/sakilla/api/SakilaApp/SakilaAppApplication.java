@@ -14,10 +14,13 @@ public class SakilaAppApplication {
 
 	@Autowired
 	private ActorRepository actorRepository;
+	private FilmRepository filmRepository;
 
-	public SakilaAppApplication(ActorRepository actorRepository)
+	public SakilaAppApplication(ActorRepository actorRepository,
+								FilmRepository filmRepository)
 	{
 		this.actorRepository = actorRepository;
+		this.filmRepository = filmRepository;
 	}
 
 
@@ -41,6 +44,19 @@ public class SakilaAppApplication {
 	}
 
 
+	@GetMapping("/allFilms")
+	@ResponseBody
+	public Iterable<Film> getAllFilms()
+	{
+		return filmRepository.findAll();
+	}
+
+	@GetMapping("/aFilm")
+	@ResponseBody
+	public Optional<Film> getFilm(@PathVariable Integer id)
+	{
+		return filmRepository.findById(id);
+	}
 /*
 	@PutMapping("/changeId/{id}")
 	@ResponseBody

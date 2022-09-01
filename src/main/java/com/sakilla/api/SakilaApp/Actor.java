@@ -24,6 +24,7 @@ public class Actor
         this.firstName = firstName;
         this.lastName = lastName;
     }
+    //create an empty object of itself
     public Actor(){}
     //methods
 
