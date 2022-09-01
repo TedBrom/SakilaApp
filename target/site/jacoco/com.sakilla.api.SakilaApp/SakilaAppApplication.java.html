@@ -14,39 +14,57 @@ public class SakilaAppApplication {
 
 	@Autowired
 	private ActorRepository actorRepository;
+	private FilmRepository filmRepository;
 
-	public SakilaAppApplication(ActorRepository actorRepository)
-<span class="fc" id="L19">	{</span>
-<span class="fc" id="L20">		this.actorRepository = actorRepository;</span>
-<span class="fc" id="L21">	}</span>
+	public SakilaAppApplication(ActorRepository actorRepository,
+								FilmRepository filmRepository)
+<span class="nc" id="L21">	{</span>
+<span class="nc" id="L22">		this.actorRepository = actorRepository;</span>
+<span class="nc" id="L23">		this.filmRepository = filmRepository;</span>
+<span class="nc" id="L24">	}</span>
 
 
 	public static void main(String[] args)
 	{
-<span class="nc" id="L26">		SpringApplication.run(SakilaAppApplication.class, args);</span>
-<span class="nc" id="L27">	}</span>
+<span class="nc" id="L29">		SpringApplication.run(SakilaAppApplication.class, args);</span>
+<span class="nc" id="L30">	}</span>
 
 	@GetMapping(&quot;/allActors&quot;)
 	@ResponseBody
 	public Iterable&lt;Actor&gt; getAllActors()
 	{
-<span class="nc" id="L33">		return actorRepository.findAll();</span>
+<span class="nc" id="L36">		return actorRepository.findAll();</span>
 	}
 
 	@GetMapping(&quot;/anActor/{id}&quot;)
 	@ResponseBody
 	public Optional&lt;Actor&gt; getActor(@PathVariable Integer id)
 	{
-<span class="nc" id="L40">		return actorRepository.findById(id);</span>
+<span class="nc" id="L43">		return actorRepository.findById(id);</span>
 	}
 
+
+	@GetMapping(&quot;/allFilms&quot;)
+	@ResponseBody
+	public Iterable&lt;Film&gt; getAllFilms()
+	{
+<span class="nc" id="L51">		return filmRepository.findAll();</span>
+	}
+
+	@GetMapping(&quot;/aFilm&quot;)
+	@ResponseBody
+	public Optional&lt;Film&gt; getFilm(@PathVariable Integer id)
+	{
+<span class="nc" id="L58">		return filmRepository.findById(id);</span>
+	}
+/*
 	@PutMapping(&quot;/changeId/{id}&quot;)
 	@ResponseBody
 	public void updateActor(@PathVariable int id, @RequestParam String name)
 	{
 
-<span class="nc" id="L48">	}</span>
-
+	}
+*/
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

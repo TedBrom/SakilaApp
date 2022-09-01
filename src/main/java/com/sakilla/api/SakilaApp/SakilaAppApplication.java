@@ -57,7 +57,15 @@ public class SakilaAppApplication {
 	{
 		return filmRepository.findById(id);
 	}
-/*
+
+	@PostMapping("/addActor")
+	@ResponseBody
+	public String addActor(@RequestBody Actor actor)
+	{
+		actorRepository.save(actor);
+		return ("Actor added");
+	}
+	/*
 	@PutMapping("/changeId/{id}")
 	@ResponseBody
 	public void updateActor(@PathVariable int id, @RequestParam String name)
