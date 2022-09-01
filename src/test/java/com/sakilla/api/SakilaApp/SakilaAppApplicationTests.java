@@ -11,10 +11,12 @@ class SakilaAppApplicationTests {
 	void contextLoads()
 	{
 	}
-*/
-    @Test
+
+	 @Test
     public void testActor(){
         Actor a = new Actor();
     }
+
+*/
 
 }
