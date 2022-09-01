@@ -11,6 +11,7 @@ class SakilaAppApplicationTests {
 	void contextLoads()
 	{
 	}
+
 	@Test
     public void testActor(){
         Actor a = new Actor();
