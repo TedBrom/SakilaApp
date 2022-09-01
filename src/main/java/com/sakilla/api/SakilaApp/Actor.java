@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Actor
 {
     //attributes
+    //defines the primary key
     @Id
     @Column(name = "actor_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
