@@ -29,6 +29,8 @@ public class SakilaAppApplication {
 		SpringApplication.run(SakilaAppApplication.class, args);
 	}
 
+	//ACTORS
+
 	@GetMapping("/allActors")
 	@ResponseBody
 	public Iterable<Actor> getAllActors()
@@ -44,20 +46,6 @@ public class SakilaAppApplication {
 	}
 
 
-	@GetMapping("/allFilms")
-	@ResponseBody
-	public Iterable<Film> getAllFilms()
-	{
-		return filmRepository.findAll();
-	}
-
-	@GetMapping("/aFilm")
-	@ResponseBody
-	public Optional<Film> getFilm(@PathVariable Integer id)
-	{
-		return filmRepository.findById(id);
-	}
-
 	@PostMapping("/addActor")
 	@ResponseBody
 	public String addActor(@RequestBody Actor actor)
@@ -65,13 +53,37 @@ public class SakilaAppApplication {
 		actorRepository.save(actor);
 		return ("Actor added");
 	}
-	/*
-	@PutMapping("/changeId/{id}")
-	@ResponseBody
-	public void updateActor(@PathVariable int id, @RequestParam String name)
-	{
 
+	/*
+	@PutMapping("/editActor/{id}")
+	@ResponseBody
+	public void editActor(@PathVariable int id, @RequestParam String name)
+	{
+ */
+
+	@DeleteMapping("/Actor/{id}")
+	@ResponseBody
+	public String removeActor(@PathVariable Integer id){
+		actorRepository.deleteById(id);
+		return("Bye bye actor " + id);
 	}
-*/
+// FILMS
+
+	@GetMapping("/allFilms")
+	@ResponseBody
+	public Iterable<Film> getAllFilms()
+	{
+		return filmRepository.findAll();
+	}
+
+	@GetMapping("/aFilm/{id}")
+	@ResponseBody
+	public Optional<Film> getFilm(@PathVariable Integer id)
+	{
+		return filmRepository.findById(id);
+	}
+
+
+
 
 }
