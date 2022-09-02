@@ -12,10 +12,14 @@ import java.util.Optional;
 @CrossOrigin
 public class SakilaAppApplication {
 
+
 	@Autowired
+
+	//create objects
 	private ActorRepository actorRepository;
 	private FilmRepository filmRepository;
 
+	//constructor
 	public SakilaAppApplication(ActorRepository actorRepository,
 								FilmRepository filmRepository)
 	{
@@ -24,19 +28,21 @@ public class SakilaAppApplication {
 	}
 
 
+	//main function (runs the app)
 	public static void main(String[] args)
 	{
 		SpringApplication.run(SakilaAppApplication.class, args);
 	}
 
+	//All mapping functionality
 	//ACTORS
-
 	@GetMapping("/allActors")
 	@ResponseBody
 	public Iterable<Actor> getAllActors()
 	{
 		return actorRepository.findAll();
 	}
+	//Get one actor based on passed ID
 
 	@GetMapping("/anActor/{id}")
 	@ResponseBody
@@ -45,6 +51,7 @@ public class SakilaAppApplication {
 		return actorRepository.findById(id);
 	}
 
+	//Add an actor to the database
 	@PostMapping("/addActor")
 	@ResponseBody
 	public String addActor(@RequestBody Actor actor)
@@ -53,7 +60,7 @@ public class SakilaAppApplication {
 		return ("Actor added");
 	}
 
-
+	//Edit the information of an actor selected by the ID passed
 	@PutMapping("/editActor/{id}")
 	@ResponseBody
 	public String editActor(@PathVariable Integer id, @RequestBody Actor newAct)
@@ -66,6 +73,7 @@ public class SakilaAppApplication {
 		return("Actor Edited");
 	}
 
+	//Remove an actor based on the ID passed to it
 	@DeleteMapping("/removeActor/{id}")
 	@ResponseBody
 	public String removeActor(@PathVariable Integer id){
@@ -73,6 +81,7 @@ public class SakilaAppApplication {
 		return("Bye bye actor " + id);
 	}
 
+	//Find an actor by their names
 	@GetMapping("/findActByName")
 	@ResponseBody
 	public Iterable<Actor> getActByName(String firstName, String lastName)
@@ -83,6 +92,7 @@ public class SakilaAppApplication {
 
 // FILMS
 
+	//Get all the films
 	@GetMapping("/allFilms")
 	@ResponseBody
 	public Iterable<Film> getAllFilms()
@@ -90,6 +100,7 @@ public class SakilaAppApplication {
 		return filmRepository.findAll();
 	}
 
+	//Get the films based on the film's ID
 	@GetMapping("/aFilm/{id}")
 	@ResponseBody
 	public Optional<Film> getFilm(@PathVariable Integer id)
@@ -98,6 +109,7 @@ public class SakilaAppApplication {
 	}
 
 
+	//Remove a film based on the passed ID
 	@DeleteMapping("/removeFilm/{id}")
 	@ResponseBody
 	public String removeFilm(@PathVariable Integer id)
@@ -106,6 +118,7 @@ public class SakilaAppApplication {
 		return("Film removed " + id);
 	}
 
+	//Edit a film based on the ID passed
 	@PutMapping("/editFilm/{id}")
 	@ResponseBody
 	public String editFilm(@PathVariable Integer id, @RequestBody Film newFilm)
