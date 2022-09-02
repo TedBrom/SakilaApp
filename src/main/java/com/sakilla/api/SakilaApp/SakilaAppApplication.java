@@ -45,7 +45,6 @@ public class SakilaAppApplication {
 		return actorRepository.findById(id);
 	}
 
-
 	@PostMapping("/addActor")
 	@ResponseBody
 	public String addActor(@RequestBody Actor actor)
@@ -67,9 +66,7 @@ public class SakilaAppApplication {
 		return("Actor Edited");
 	}
 
-
-
-	@DeleteMapping("/Actor/{id}")
+	@DeleteMapping("/removeActor/{id}")
 	@ResponseBody
 	public String removeActor(@PathVariable Integer id){
 		actorRepository.deleteById(id);
@@ -92,6 +89,23 @@ public class SakilaAppApplication {
 	}
 
 
+	@DeleteMapping("/removeFilm/{id}")
+	@ResponseBody
+	public String removeFilm(@PathVariable Integer id)
+	{
+		filmRepository.deleteById(id);
+		return("Film removed " + id);
+	}
 
+	@PutMapping("/editFilm/{id}")
+	@ResponseBody
+	public String editFilm(@PathVariable Integer id, @RequestBody Film newFilm)
+	{
+		final Film film = filmRepository.findById(id).get();
+		film.setTitle(newFilm.title);
+		film.setDescription(newFilm.description);
+		filmRepository.save(film);
+		return ("film edited");
+	}
 
 }
