@@ -54,12 +54,20 @@ public class SakilaAppApplication {
 		return ("Actor added");
 	}
 
-	/*
+
 	@PutMapping("/editActor/{id}")
 	@ResponseBody
-	public void editActor(@PathVariable int id, @RequestParam String name)
+	public String editActor(@PathVariable Integer id, @RequestBody Actor newAct)
 	{
- */
+		final Actor actor = actorRepository.findById(id).get();
+		actor.setFirstName(newAct.firstName);
+		actor.setLastName(newAct.lastName);
+		actorRepository.save(actor);
+
+		return("Actor Edited");
+	}
+
+
 
 	@DeleteMapping("/Actor/{id}")
 	@ResponseBody
