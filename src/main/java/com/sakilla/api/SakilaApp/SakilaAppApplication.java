@@ -72,6 +72,15 @@ public class SakilaAppApplication {
 		actorRepository.deleteById(id);
 		return("Bye bye actor " + id);
 	}
+
+	@GetMapping("/findActByName")
+	@ResponseBody
+	public Iterable<Actor> getActByName(String firstName, String lastName)
+	{
+		return actorRepository.searchByFirstLastName(firstName, lastName);
+	}
+
+
 // FILMS
 
 	@GetMapping("/allFilms")
