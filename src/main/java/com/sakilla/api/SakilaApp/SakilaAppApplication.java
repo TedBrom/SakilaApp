@@ -18,13 +18,15 @@ public class SakilaAppApplication {
 	//create objects
 	private ActorRepository actorRepository;
 	private FilmRepository filmRepository;
+	private CategoryRepository categoryRepository;
 
 	//constructor
 	public SakilaAppApplication(ActorRepository actorRepository,
-								FilmRepository filmRepository)
+								FilmRepository filmRepository, CategoryRepository categoryRepository)
 	{
 		this.actorRepository = actorRepository;
 		this.filmRepository = filmRepository;
+		this.categoryRepository = categoryRepository;
 	}
 
 
@@ -129,5 +131,38 @@ public class SakilaAppApplication {
 		filmRepository.save(film);
 		return ("film edited");
 	}
+
+	//Category Methods
+
+	@GetMapping("/allCategory")
+	@ResponseBody
+	public Iterable<Category> getAllCategory()
+	{
+		return categoryRepository.findAll();
+	}
+	@GetMapping("/aCategory/{id}")
+	@ResponseBody
+	public Optional<Category> getCategory(@PathVariable Integer id) {
+		return categoryRepository.findById(id);
+	}
+
+	@DeleteMapping("/removeCategory/{id}")
+	@ResponseBody
+	public String removeCategory(@PathVariable Integer id)
+	{
+		categoryRepository.deleteById(id);
+		return("Category removed " + id);
+	}
+
+	@PutMapping("/editCategory/{id}")
+	@ResponseBody
+	public String editCategory(@PathVariable Integer id, @RequestBody Category newCat)
+	{
+		final Category category = categoryRepository.findById(id).get();
+		category.setCatName(newCat.catName);
+		categoryRepository.save(category);
+		return ("Category edited");
+	}
+
 
 }
