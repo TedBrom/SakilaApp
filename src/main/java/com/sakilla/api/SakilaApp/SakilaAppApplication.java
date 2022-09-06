@@ -158,7 +158,7 @@ public class SakilaAppApplication {
 	@ResponseBody
 	public String editCategory(@PathVariable Integer id, @RequestBody Category newCat)
 	{
-		final Category category = categoryRepository.findById(id).get();
+		Category category = categoryRepository.findById(id).get();
 		category.setCatName(newCat.catName);
 		categoryRepository.save(category);
 		return ("Category edited");
