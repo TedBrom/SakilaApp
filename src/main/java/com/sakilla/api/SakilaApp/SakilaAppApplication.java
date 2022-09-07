@@ -154,6 +154,12 @@ public class SakilaAppApplication {
 		return("Category removed " + id);
 	}
 
+	@GetMapping("/categoryFilm/{id}")
+	@ResponseBody
+	public Iterable<Film> getCategoryFilm(@PathVariable Integer id){
+		return filmRepository.getCategoryFilm(id);
+	}
+
 	@PutMapping("/editCategory/{id}")
 	@ResponseBody
 	public String editCategory(@PathVariable Integer id, @RequestBody Category newCat)
