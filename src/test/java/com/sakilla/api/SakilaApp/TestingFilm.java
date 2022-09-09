@@ -53,4 +53,9 @@ public class TestingFilm {
 
     }
 
+    @Test
+    void testGetAFilm(){
+
+    }
+
 }
