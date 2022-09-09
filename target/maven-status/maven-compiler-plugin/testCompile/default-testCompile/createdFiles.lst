@@ -1,1 +1,3 @@
-com\sakilla\api\SakilaApp\SakilaAppApplicationTests.class
+com\sakilla\api\SakilaApp\TestingCategory.class
+com\sakilla\api\SakilaApp\TestingFilm.class
+com\sakilla\api\SakilaApp\TestingActor.class
