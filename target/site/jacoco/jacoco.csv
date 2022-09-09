@@ -1,5 +1,5 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-SakilaApp,com.sakilla.api.SakilaApp,Actor,36,0,0,0,15,0,8,0,8,0
-SakilaApp,com.sakilla.api.SakilaApp,Category,26,0,0,0,11,0,6,0,6,0
+SakilaApp,com.sakilla.api.SakilaApp,Actor,24,12,0,0,10,5,7,1,7,1
+SakilaApp,com.sakilla.api.SakilaApp,Category,17,9,0,0,7,4,5,1,5,1
 SakilaApp,com.sakilla.api.SakilaApp,Film,24,12,0,0,10,5,7,1,7,1
-SakilaApp,com.sakilla.api.SakilaApp,SakilaAppApplication,129,16,0,0,31,6,15,2,15,2
+SakilaApp,com.sakilla.api.SakilaApp,SakilaAppApplication,121,24,0,0,29,8,13,4,13,4

@@ -42,7 +42,7 @@ public class SakilaAppApplication {
 	@ResponseBody
 	public Iterable&lt;Actor&gt; getAllActors()
 	{
-<span class="nc" id="L45">		return actorRepository.findAll();</span>
+<span class="fc" id="L45">		return actorRepository.findAll();</span>
 	}
 	//Get one actor based on passed ID
 
@@ -138,7 +138,7 @@ public class SakilaAppApplication {
 	@ResponseBody
 	public Iterable&lt;Category&gt; getAllCategory()
 	{
-<span class="nc" id="L141">		return categoryRepository.findAll();</span>
+<span class="fc" id="L141">		return categoryRepository.findAll();</span>
 	}
 	@GetMapping(&quot;/aCategory/{id}&quot;)
 	@ResponseBody
