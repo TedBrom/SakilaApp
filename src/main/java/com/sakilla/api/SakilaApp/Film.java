@@ -15,12 +15,35 @@ public class Film {
     @Column(name = "description")
     String description;
 
+    @Column(name = "release_year")
+    int year;
+
+    @Column(name = "rental_duration")
+    int rentTime;
+
+    @Column(name = "rental_rate")
+    double rentRate;
+
+    @Column(name = "length")
+    int length;
+
+    @Column(name = "rating")
+    String rating;
+
     //constructors
-    public Film(int filmID, String title, String description)
+
+
+    public Film(int filmID, String title, String description, int year,
+                int rentTime, double rentRate, int length, String rating)
     {
         this.filmID = filmID;
         this.title = title;
         this.description = description;
+        this.year = year;
+        this.rentTime = rentTime;
+        this.rentRate = rentRate;
+        this.length = length;
+        this.rating = rating;
     }
 
     public Film(){}
@@ -47,5 +70,45 @@ public class Film {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getRentTime() {
+        return rentTime;
+    }
+
+    public void setRentTime(int rentTime) {
+        this.rentTime = rentTime;
+    }
+
+    public double getRentRate() {
+        return rentRate;
+    }
+
+    public void setRentRate(int rentRate) {
+        this.rentRate = rentRate;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 }

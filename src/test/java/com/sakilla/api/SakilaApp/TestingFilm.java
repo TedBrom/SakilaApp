@@ -36,8 +36,10 @@ public class TestingFilm {
 
         List<Film> filmList = new ArrayList<>();
 
-        Film testFilm = new Film (1,"Test Film", "Film Test");
-        Film testFilm2 = new Film(2,"Another Film", "Film Another");
+        Film testFilm = new Film (1,"Test Film", "Film Test", 2005,
+                6, 0.99, 88, "PG" );
+        Film testFilm2 = new Film(2,"Another Film", "Film Another", 2005,
+                6, 0.99, 88, "PG" );
 
         filmList.add(testFilm);
         filmList.add(testFilm2);
