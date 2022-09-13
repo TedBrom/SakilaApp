@@ -8,3 +8,5 @@ Feature: Display films on load
     Examples:
       |page  |
       |Home  |
+      |Actor |
+      |Film  |
