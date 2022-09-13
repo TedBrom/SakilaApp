@@ -15,38 +15,101 @@ public class Film {
     @Column(name = &quot;description&quot;)
     String description;
 
-    //constructors
-    public Film(int filmID, String title, String description)
-<span class="fc" id="L20">    {</span>
-<span class="fc" id="L21">        this.filmID = filmID;</span>
-<span class="fc" id="L22">        this.title = title;</span>
-<span class="fc" id="L23">        this.description = description;</span>
-<span class="fc" id="L24">    }</span>
+    @Column(name = &quot;release_year&quot;)
+    int year;
 
-<span class="nc" id="L26">    public Film(){}</span>
+    @Column(name = &quot;rental_duration&quot;)
+    int rentTime;
+
+    @Column(name = &quot;rental_rate&quot;)
+    double rentRate;
+
+    @Column(name = &quot;length&quot;)
+    int length;
+
+    @Column(name = &quot;rating&quot;)
+    String rating;
+
+    //constructors
+
+
+    public Film(int filmID, String title, String description, int year,
+                int rentTime, double rentRate, int length, String rating)
+<span class="fc" id="L38">    {</span>
+<span class="fc" id="L39">        this.filmID = filmID;</span>
+<span class="fc" id="L40">        this.title = title;</span>
+<span class="fc" id="L41">        this.description = description;</span>
+<span class="fc" id="L42">        this.year = year;</span>
+<span class="fc" id="L43">        this.rentTime = rentTime;</span>
+<span class="fc" id="L44">        this.rentRate = rentRate;</span>
+<span class="fc" id="L45">        this.length = length;</span>
+<span class="fc" id="L46">        this.rating = rating;</span>
+<span class="fc" id="L47">    }</span>
+
+<span class="nc" id="L49">    public Film(){}</span>
 
     public int getFilmID() {
-<span class="nc" id="L29">        return filmID;</span>
+<span class="nc" id="L52">        return filmID;</span>
     }
 
     public void setFilmID(int filmID) {
-<span class="nc" id="L33">        this.filmID = filmID;</span>
-<span class="nc" id="L34">    }</span>
+<span class="nc" id="L56">        this.filmID = filmID;</span>
+<span class="nc" id="L57">    }</span>
 
     public String getTitle() {
-<span class="nc" id="L37">        return title;</span>
+<span class="nc" id="L60">        return title;</span>
     }
 
     public void setTitle(String title) {
-<span class="nc" id="L41">        this.title = title;</span>
-<span class="nc" id="L42">    }</span>
+<span class="nc" id="L64">        this.title = title;</span>
+<span class="nc" id="L65">    }</span>
 
     public String getDescription() {
-<span class="nc" id="L45">        return description;</span>
+<span class="nc" id="L68">        return description;</span>
     }
 
     public void setDescription(String description) {
-<span class="nc" id="L49">        this.description = description;</span>
-<span class="nc" id="L50">    }</span>
+<span class="nc" id="L72">        this.description = description;</span>
+<span class="nc" id="L73">    }</span>
+
+    public int getYear() {
+<span class="nc" id="L76">        return year;</span>
+    }
+
+    public void setYear(int year) {
+<span class="nc" id="L80">        this.year = year;</span>
+<span class="nc" id="L81">    }</span>
+
+    public int getRentTime() {
+<span class="nc" id="L84">        return rentTime;</span>
+    }
+
+    public void setRentTime(int rentTime) {
+<span class="nc" id="L88">        this.rentTime = rentTime;</span>
+<span class="nc" id="L89">    }</span>
+
+    public double getRentRate() {
+<span class="nc" id="L92">        return rentRate;</span>
+    }
+
+    public void setRentRate(int rentRate) {
+<span class="nc" id="L96">        this.rentRate = rentRate;</span>
+<span class="nc" id="L97">    }</span>
+
+    public int getLength() {
+<span class="nc" id="L100">        return length;</span>
+    }
+
+    public void setLength(int length) {
+<span class="nc" id="L104">        this.length = length;</span>
+<span class="nc" id="L105">    }</span>
+
+    public String getRating() {
+<span class="nc" id="L108">        return rating;</span>
+    }
+
+    public void setRating(String rating) {
+<span class="nc" id="L112">        this.rating = rating;</span>
+<span class="nc" id="L113">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
