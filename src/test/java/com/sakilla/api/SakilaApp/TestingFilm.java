@@ -56,10 +56,14 @@ public class TestingFilm {
 
     }
 
-    /* @Test
+    @Test
     void testGetAFilm(){
+        when(filmRepository.findById(1)).thenReturn(Optional.of(new Film()));
+        Film output = filmRepository.findById(1).get();
+        Film expected = new Film();
+        Assertions.assertEquals(expected, output, "why nay");
 
-    }*/
+    }
 
 
 }

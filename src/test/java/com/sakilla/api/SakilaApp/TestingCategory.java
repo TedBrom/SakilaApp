@@ -9,6 +9,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.when;
 
@@ -55,4 +56,14 @@ public class TestingCategory {
         Assertions.assertEquals(Expected, Actual, "Get all categories broke :(");
 
     }
+
+    @Test
+    void testGetACategory(){
+        when(categoryRepository.findById(1)).thenReturn(Optional.of(new Category()));
+        Category output = categoryRepository.findById(1).get();
+        Category expected = new Category();
+        Assertions.assertEquals(expected, output, "why nay");
+
+    }
+
 }

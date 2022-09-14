@@ -1,5 +1,6 @@
 package com.sakilla.api.SakilaApp;
 import javax.persistence.*;
+import java.util.Objects;
 
 
 @Entity
@@ -50,5 +51,18 @@ public class Actor
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Actor actor = (Actor) o;
+        return actorId == actor.actorId && Objects.equals(firstName, actor.firstName) && Objects.equals(lastName, actor.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(actorId, firstName, lastName);
     }
 }

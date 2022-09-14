@@ -1,5 +1,6 @@
 package com.sakilla.api.SakilaApp;
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "film")
@@ -110,5 +111,18 @@ public class Film {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Film film = (Film) o;
+        return filmID == film.filmID && year == film.year && rentTime == film.rentTime && Double.compare(film.rentRate, rentRate) == 0 && length == film.length && Objects.equals(title, film.title) && Objects.equals(description, film.description) && Objects.equals(rating, film.rating);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(filmID, title, description, year, rentTime, rentRate, length, rating);
     }
 }
