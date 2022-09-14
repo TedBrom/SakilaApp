@@ -1,5 +1,8 @@
 com\sakilla\api\SakilaApp\TestingFilm.class
+CucumberTests\DisplayAFilmStepDef.class
+CucumberTests\DisplayAnActorStepDef.class
 CucumberTests\DisplayFilmsStepDefs.class
+CucumberTests\DisplayACategoryStepDef.class
 com\sakilla\api\SakilaApp\TestingCategory.class
 CucumberTests\RunCucumberTests.class
 com\sakilla\api\SakilaApp\TestingActor.class
