@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -64,6 +66,18 @@ public class TestingCategory {
         Category expected = new Category();
         Assertions.assertEquals(expected, output, "why nay");
 
+    }
+
+    @Test
+    void editCatName(){
+        Category category = new Category();
+        Assertions.assertEquals(null, category.catName);
+        when(categoryRepository.findById(1)).thenReturn(Optional.of(category));
+        Category newCat = new Category();
+        newCat.setCatName("newCatName");
+        ArgumentCaptor<Category> captor = ArgumentCaptor.forClass(Category.class);
+        sakilaAppApplication.editCategory(1, newCat);
+        verify(categoryRepository).save(newCat);
     }
 
 }

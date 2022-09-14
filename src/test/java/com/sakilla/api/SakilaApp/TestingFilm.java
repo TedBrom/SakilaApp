@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -63,6 +65,18 @@ public class TestingFilm {
         Film expected = new Film();
         Assertions.assertEquals(expected, output, "why nay");
 
+    }
+
+    @Test
+    void editFilmTitle(){
+        Film film = new Film();
+        Assertions.assertEquals(null, film.title);
+        when(filmRepository.findById(1)).thenReturn(Optional.of(film));
+        Film newTitle = new Film();
+        newTitle.setTitle("newTitle");
+        ArgumentCaptor<Film> captor = ArgumentCaptor.forClass(Film.class);
+        sakilaAppApplication.editFilm(1, newTitle);
+        verify(filmRepository).save(newTitle);
     }
 
 

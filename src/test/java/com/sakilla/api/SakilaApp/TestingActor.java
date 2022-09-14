@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -60,5 +62,17 @@ public class TestingActor {
         Actor output = actorRepository.findById(1).get();
         Actor expected = new Actor();
         Assertions.assertEquals(expected, output, "why nay");
+    }
+
+    @Test
+    void editActorName(){
+        Actor actor = new Actor();
+        Assertions.assertEquals(null, actor.firstName);
+        when(actorRepository.findById(1)).thenReturn(Optional.of(actor));
+        Actor newAct = new Actor();
+        newAct.setFirstName("newActName");
+        ArgumentCaptor<Category> captor = ArgumentCaptor.forClass(Category.class);
+        sakilaAppApplication.editActor(1, newAct);
+        verify(actorRepository).save(newAct);
     }
 }

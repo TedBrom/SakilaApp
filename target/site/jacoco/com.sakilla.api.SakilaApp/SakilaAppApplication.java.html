@@ -125,11 +125,11 @@ public class SakilaAppApplication {
 	@ResponseBody
 	public String editFilm(@PathVariable Integer id, @RequestBody Film newFilm)
 	{
-<span class="nc" id="L128">		final Film film = filmRepository.findById(id).get();</span>
-<span class="nc" id="L129">		film.setTitle(newFilm.title);</span>
-<span class="nc" id="L130">		film.setDescription(newFilm.description);</span>
-<span class="nc" id="L131">		filmRepository.save(film);</span>
-<span class="nc" id="L132">		return (&quot;film edited&quot;);</span>
+<span class="fc" id="L128">		final Film film = filmRepository.findById(id).get();</span>
+<span class="fc" id="L129">		film.setTitle(newFilm.title);</span>
+<span class="fc" id="L130">		film.setDescription(newFilm.description);</span>
+<span class="fc" id="L131">		filmRepository.save(film);</span>
+<span class="fc" id="L132">		return (&quot;film edited&quot;);</span>
 	}
 
 	//Category Methods
@@ -164,10 +164,10 @@ public class SakilaAppApplication {
 	@ResponseBody
 	public String editCategory(@PathVariable Integer id, @RequestBody Category newCat)
 	{
-<span class="nc" id="L167">		Category category = categoryRepository.findById(id).get();</span>
-<span class="nc" id="L168">		category.setCatName(newCat.catName);</span>
-<span class="nc" id="L169">		categoryRepository.save(category);</span>
-<span class="nc" id="L170">		return (&quot;Category edited&quot;);</span>
+<span class="fc" id="L167">		Category category = categoryRepository.findById(id).get();</span>
+<span class="fc" id="L168">		category.setCatName(newCat.catName);</span>
+<span class="fc" id="L169">		categoryRepository.save(category);</span>
+<span class="fc" id="L170">		return (&quot;Category edited&quot;);</span>
 	}
 
 
