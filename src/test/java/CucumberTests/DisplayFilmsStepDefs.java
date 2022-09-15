@@ -51,8 +51,8 @@ public class DisplayFilmsStepDefs {
 
     }
 
-    @Then("display a list of films")
-    public void display_a_list_of_films() {
+    @Then("display a list of objects")
+    public void display_a_list_of_objects() {
         // Write code here that turns the phrase above into concrete actions
 
     }

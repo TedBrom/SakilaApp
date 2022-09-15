@@ -3,7 +3,7 @@ Feature: Display films on load
     Given the application is running
     When the "<page>" loads
     And the api connects
-    Then display a list of films
+    Then display a list of objects
 
     Examples:
       |page  |
