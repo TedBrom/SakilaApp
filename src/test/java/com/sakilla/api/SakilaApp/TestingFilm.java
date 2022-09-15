@@ -97,6 +97,40 @@ public class TestingFilm {
         film.setDescription("Test desc");
         Assertions.assertEquals("Test desc", film.getDescription(), "Wrong film desc");
     }
+    @Test
+    void getFilmRelease(){
+        Film film = new Film();
+        film.setYear(2004);
+        Assertions.assertEquals(2004, film.getYear(), "Wrong film year");
+    }
+
+    @Test
+    void getRentTime(){
+        Film film = new Film();
+        film.setRentTime(10);
+        Assertions.assertEquals(10, film.getRentTime(), "Wrong rent time");
+    }
+
+    @Test
+    void getRentRate(){
+        Film film = new Film();
+        film.setRentRate(10);
+        Assertions.assertEquals(10, film.getRentRate(), "Wrong rent rate");
+    }
+
+    @Test
+    void getFilmDuration(){
+        Film film = new Film();
+        film.setLength(29);
+        Assertions.assertEquals(29, film.getLength(),"Wrong film duration");
+    }
+
+    @Test
+    void getFilmRating(){
+        Film film = new Film();
+        film.setRating("PG");
+        Assertions.assertEquals("PG", film.getRating(), "Wrong film rating");
+    }
 
 
 }
