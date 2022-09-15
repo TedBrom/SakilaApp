@@ -79,5 +79,24 @@ public class TestingFilm {
         verify(filmRepository).save(newTitle);
     }
 
+    @Test
+    void getFilmID(){
+        Film film = new Film();
+        film.setFilmID(1);
+        Assertions.assertEquals(1, film.getFilmID(), "Wrong film ID");
+    }
+    @Test
+    void getFilmTitle(){
+        Film film = new Film();
+        film.setTitle("Test tite");
+        Assertions.assertEquals("Test tite", film.getTitle(), "Wrong film title");
+    }
+    @Test
+    void getFilmDesc(){
+        Film film = new Film();
+        film.setDescription("Test desc");
+        Assertions.assertEquals("Test desc", film.getDescription(), "Wrong film desc");
+    }
+
 
 }

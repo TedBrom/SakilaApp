@@ -67,12 +67,12 @@ public class SakilaAppApplication {
 	@ResponseBody
 	public String editActor(@PathVariable Integer id, @RequestBody Actor newAct)
 	{
-<span class="nc" id="L70">		final Actor actor = actorRepository.findById(id).get();</span>
-<span class="nc" id="L71">		actor.setFirstName(newAct.firstName);</span>
-<span class="nc" id="L72">		actor.setLastName(newAct.lastName);</span>
-<span class="nc" id="L73">		actorRepository.save(actor);</span>
+<span class="fc" id="L70">		final Actor actor = actorRepository.findById(id).get();</span>
+<span class="fc" id="L71">		actor.setFirstName(newAct.firstName);</span>
+<span class="fc" id="L72">		actor.setLastName(newAct.lastName);</span>
+<span class="fc" id="L73">		actorRepository.save(actor);</span>
 
-<span class="nc" id="L75">		return(&quot;Actor Edited&quot;);</span>
+<span class="fc" id="L75">		return(&quot;Actor Edited&quot;);</span>
 	}
 
 	//Remove an actor based on the ID passed to it

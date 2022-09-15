@@ -75,4 +75,25 @@ public class TestingActor {
         sakilaAppApplication.editActor(1, newAct);
         verify(actorRepository).save(newAct);
     }
+
+    @Test
+    void getActorID(){
+       Actor actor = new Actor();
+       actor.setActorId(2);
+       Assertions.assertEquals(2, actor.getActorId(), "Wrong actor ID");
+    }
+
+    @Test
+    void getActorFirstName(){
+        Actor actor = new Actor();
+        actor.setFirstName("Kiyrean");
+        Assertions.assertEquals("Kiyrean", actor.getFirstName(), "Wrong actor name");
+    }
+    @Test
+    void getActorLastName(){
+        Actor actor = new Actor();
+        actor.setLastName("Dyer-Allen");
+        Assertions.assertEquals("Dyer-Allen", actor.getLastName(), "Wrong actor surname");
+    }
+
 }

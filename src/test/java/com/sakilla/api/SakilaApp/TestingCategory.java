@@ -80,4 +80,18 @@ public class TestingCategory {
         verify(categoryRepository).save(newCat);
     }
 
+    @Test
+    void getCatID(){
+        Category category = new Category();
+        category.setCategoryId(2);
+        Assertions.assertEquals(2, category.getCategoryId(), "Wrong cat ID");
+    }
+
+    @Test
+    void getCatName(){
+        Category category = new Category();
+        category.setCatName("Spooky");
+        Assertions.assertEquals("Spooky", category.getCatName(), "Wrong cat name");
+    }
+
 }
