@@ -140,4 +140,5 @@ public class TestingFilm {
         sakilaAppApplication.removeCategory(film.getFilmID());
         verify(categoryRepository).deleteById(film.getFilmID());
     }
+
 }

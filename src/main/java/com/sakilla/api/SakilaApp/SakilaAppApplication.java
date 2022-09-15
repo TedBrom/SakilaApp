@@ -84,12 +84,7 @@ public class SakilaAppApplication {
 	}
 
 	//Find an actor by their names
-	@GetMapping("/findActByName")
-	@ResponseBody
-	public Iterable<Actor> getActByName(String firstName, String lastName)
-	{
-		return actorRepository.searchByFirstLastName(firstName, lastName);
-	}
+
 
 
 // FILMS
