@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Film.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">SakilaApp</a> &gt; <a href="index.source.html" class="el_package">com.sakilla.api.SakilaApp</a> &gt; <span class="el_source">Film.java</span></div><h1>Film.java</h1><pre class="source lang-java linenums">package com.sakilla.api.SakilaApp;
+import javax.persistence.*;
+import java.util.Objects;
+
+@Entity
+@Table(name = &quot;film&quot;)
+public class Film {
+    //attributes
+    //define primary key
+    @Id
+    @Column(name = &quot;film_id&quot;)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int filmID;
+    @Column(name = &quot;title&quot;)
+    String title;
+    @Column(name = &quot;description&quot;)
+    String description;
+
+    @Column(name = &quot;release_year&quot;)
+    int year;
+
+    @Column(name = &quot;rental_duration&quot;)
+    int rentTime;
+
+    @Column(name = &quot;rental_rate&quot;)
+    double rentRate;
+
+    @Column(name = &quot;length&quot;)
+    int length;
+
+    @Column(name = &quot;rating&quot;)
+    String rating;
+
+    //constructors
+
+
+    public Film(int filmID, String title, String description, int year,
+                int rentTime, double rentRate, int length, String rating)
+<span class="fc" id="L39">    {</span>
+<span class="fc" id="L40">        this.filmID = filmID;</span>
+<span class="fc" id="L41">        this.title = title;</span>
+<span class="fc" id="L42">        this.description = description;</span>
+<span class="fc" id="L43">        this.year = year;</span>
+<span class="fc" id="L44">        this.rentTime = rentTime;</span>
+<span class="fc" id="L45">        this.rentRate = rentRate;</span>
+<span class="fc" id="L46">        this.length = length;</span>
+<span class="fc" id="L47">        this.rating = rating;</span>
+<span class="fc" id="L48">    }</span>
+
+<span class="fc" id="L50">    public Film(){}</span>
+
+    public int getFilmID() {
+<span class="fc" id="L53">        return filmID;</span>
+    }
+
+    public void setFilmID(int filmID) {
+<span class="fc" id="L57">        this.filmID = filmID;</span>
+<span class="fc" id="L58">    }</span>
+
+    public String getTitle() {
+<span class="fc" id="L61">        return title;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="fc" id="L65">        this.title = title;</span>
+<span class="fc" id="L66">    }</span>
+
+    public String getDescription() {
+<span class="fc" id="L69">        return description;</span>
+    }
+
+    public void setDescription(String description) {
+<span class="fc" id="L73">        this.description = description;</span>
+<span class="fc" id="L74">    }</span>
+
+    public int getYear() {
+<span class="fc" id="L77">        return year;</span>
+    }
+
+    public void setYear(int year) {
+<span class="fc" id="L81">        this.year = year;</span>
+<span class="fc" id="L82">    }</span>
+
+    public int getRentTime() {
+<span class="fc" id="L85">        return rentTime;</span>
+    }
+
+    public void setRentTime(int rentTime) {
+<span class="fc" id="L89">        this.rentTime = rentTime;</span>
+<span class="fc" id="L90">    }</span>
+
+    public double getRentRate() {
+<span class="fc" id="L93">        return rentRate;</span>
+    }
+
+    public void setRentRate(int rentRate) {
+<span class="fc" id="L97">        this.rentRate = rentRate;</span>
+<span class="fc" id="L98">    }</span>
+
+    public int getLength() {
+<span class="fc" id="L101">        return length;</span>
+    }
+
+    public void setLength(int length) {
+<span class="fc" id="L105">        this.length = length;</span>
+<span class="fc" id="L106">    }</span>
+
+    public String getRating() {
+<span class="fc" id="L109">        return rating;</span>
+    }
+
+    public void setRating(String rating) {
+<span class="fc" id="L113">        this.rating = rating;</span>
+<span class="fc" id="L114">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="pc bpc" id="L118" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L119" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+<span class="fc" id="L120">        Film film = (Film) o;</span>
+<span class="pc bpc" id="L121" title="8 of 16 branches missed.">        return filmID == film.filmID &amp;&amp; year == film.year &amp;&amp; rentTime == film.rentTime &amp;&amp; Double.compare(film.rentRate, rentRate) == 0 &amp;&amp; length == film.length &amp;&amp; Objects.equals(title, film.title) &amp;&amp; Objects.equals(description, film.description) &amp;&amp; Objects.equals(rating, film.rating);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L126">        return Objects.hash(filmID, title, description, year, rentTime, rentRate, length, rating);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
