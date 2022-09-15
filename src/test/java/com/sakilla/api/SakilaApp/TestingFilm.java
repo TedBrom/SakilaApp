@@ -132,5 +132,12 @@ public class TestingFilm {
         Assertions.assertEquals("PG", film.getRating(), "Wrong film rating");
     }
 
-
+    @Test
+    void deleteFilmByID(){
+        Film film = new Film();
+        film.setTitle("Kiyrean");
+        film.setFilmID(3);
+        sakilaAppApplication.removeCategory(film.getFilmID());
+        verify(categoryRepository).deleteById(film.getFilmID());
+    }
 }

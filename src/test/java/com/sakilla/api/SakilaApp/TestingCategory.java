@@ -94,4 +94,13 @@ public class TestingCategory {
         Assertions.assertEquals("Spooky", category.getCatName(), "Wrong cat name");
     }
 
+    @Test
+    void deleteCatByID(){
+        Category category = new Category();
+        category.setCatName("Kiyrean");
+        category.setCategoryId(3);
+        sakilaAppApplication.removeCategory(category.getCategoryId());
+        verify(categoryRepository).deleteById(category.getCategoryId());
+    }
+
 }

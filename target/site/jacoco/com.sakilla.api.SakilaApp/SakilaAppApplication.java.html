@@ -79,8 +79,8 @@ public class SakilaAppApplication {
 	@DeleteMapping(&quot;/removeActor/{id}&quot;)
 	@ResponseBody
 	public String removeActor(@PathVariable Integer id){
-<span class="nc" id="L82">		actorRepository.deleteById(id);</span>
-<span class="nc" id="L83">		return(&quot;Bye bye actor &quot; + id);</span>
+<span class="fc" id="L82">		actorRepository.deleteById(id);</span>
+<span class="fc" id="L83">		return(&quot;Bye bye actor &quot; + id);</span>
 	}
 
 	//Find an actor by their names
@@ -150,8 +150,8 @@ public class SakilaAppApplication {
 	@ResponseBody
 	public String removeCategory(@PathVariable Integer id)
 	{
-<span class="nc" id="L153">		categoryRepository.deleteById(id);</span>
-<span class="nc" id="L154">		return(&quot;Category removed &quot; + id);</span>
+<span class="fc" id="L153">		categoryRepository.deleteById(id);</span>
+<span class="fc" id="L154">		return(&quot;Category removed &quot; + id);</span>
 	}
 
 	@GetMapping(&quot;/categoryFilm/{id}&quot;)

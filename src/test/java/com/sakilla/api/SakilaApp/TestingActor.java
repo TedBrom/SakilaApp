@@ -96,4 +96,14 @@ public class TestingActor {
         Assertions.assertEquals("Dyer-Allen", actor.getLastName(), "Wrong actor surname");
     }
 
+    @Test
+    void DeleteActorById(){
+        Actor actor = new Actor();
+        actor.setFirstName("Kiyrean");
+        actor.setLastName("Matej");
+        actor.setActorId(3);
+        sakilaAppApplication.removeActor(actor.getActorId());
+        verify(actorRepository).deleteById(actor.getActorId());
+    }
+
 }
