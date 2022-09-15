@@ -106,4 +106,13 @@ public class TestingActor {
         verify(actorRepository).deleteById(actor.getActorId());
     }
 
+    @Test
+    public void testEquals_Symmetric() {
+        Actor x = new Actor();  // equals and hashCode check name field value
+        Actor y = new Actor();
+        x.setFirstName("yes");
+        y.setFirstName("yes");
+        Assertions.assertTrue(x.equals(y) && y.equals(x));
+        Assertions.assertTrue(x.hashCode() == y.hashCode());
+    }
 }

@@ -141,4 +141,14 @@ public class TestingFilm {
         verify(categoryRepository).deleteById(film.getFilmID());
     }
 
+    @Test
+    public void testEquals_Symmetric() {
+        Film x = new Film();  // equals and hashCode check name field value
+        Film y = new Film();
+        x.setTitle("1");
+        y.setTitle("1");
+        Assertions.assertTrue(x.equals(y) && y.equals(x));
+        Assertions.assertTrue(x.hashCode() == y.hashCode());
+    }
+
 }

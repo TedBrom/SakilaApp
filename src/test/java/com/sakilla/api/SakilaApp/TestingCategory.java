@@ -103,4 +103,14 @@ public class TestingCategory {
         verify(categoryRepository).deleteById(category.getCategoryId());
     }
 
+    @Test
+    public void testEquals_Symmetric() {
+        Category x = new Category();  // equals and hashCode check name field value
+        Category y = new Category();
+        x.setCatName("cat");
+        y.setCatName("cat");
+        Assertions.assertTrue(x.equals(y) && y.equals(x));
+        Assertions.assertTrue(x.hashCode() == y.hashCode());
+    }
+
 }
